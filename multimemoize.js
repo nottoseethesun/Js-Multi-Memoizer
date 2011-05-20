@@ -3,7 +3,7 @@
  * ('multi-memoized'), as that function is executed 'n' times.
  * Does not necessarily cache the return value: Can cache any values.
  * @param p_fnMemoizable {function} The function to be multi-memoized.
- * @param p_aCacheableNames {function} Names of local variables to be cached.
+ * @param p_aCacheableNames {Array<string>} Names of local variables to be cached.
  * @return function The multi-memoized function.
  */
 function com_treelogic_swe_util_multimemoize( p_fnMemoizable, p_aCacheableNames ) {
