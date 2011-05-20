@@ -21,7 +21,7 @@ function com_treelogic_swe_util_multimemoize( p_fnMemoizable, p_aCacheableNames 
         fnMemorizer = new Function( "", sVars + " return " + p_fnMemoizable.toString() + ";" );
 
     // To see how this works, uncomment the following statement:
-    // console.log( fnMemoizer );         
+    // console.log( fnMemorizer );         
 
     return fnMemorizer();
 }
