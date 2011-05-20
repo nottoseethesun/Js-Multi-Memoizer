@@ -1,0 +1,3 @@
+Provides a memory-efficient cache for local variables in a function
+('multi-memoized'), as that function is executed 'n' times.
+Does not necessarily cache the return value: Can cache any values.
