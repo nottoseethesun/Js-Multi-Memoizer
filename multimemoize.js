@@ -26,12 +26,11 @@ function com_treelogic_swe_util_multimemoize( p_fnMemoizable, p_aCacheableNames 
     return fnMemorizer();
 }
 
-
 /**
  * The expected output of this test is this:
  * 0
- * 1
  * 2
+ * 4
  */
 (function memoTest() {
 
@@ -46,18 +45,22 @@ function com_treelogic_swe_util_multimemoize( p_fnMemoizable, p_aCacheableNames 
          }
 
          if( typeof iSeed === "undefined" ) {
-             iSeed = 0;
+             iSeed = -1;             
+         }
+         if( typeof iSeed2 === "undefined" ) {
+             iSeed2 = -1;             
          }
 
-         return iSeed++;
+         iSeed++;
+         iSeed2++;  
+         return ( iSeed + iSeed2 );
      }
 
      // Execute the test: Start -------
-     var run = com_treelogic_swe_util_multimemoize( run, [ "iSeed" ] );
+     var run = com_treelogic_swe_util_multimemoize( run, [ "iSeed", "iSeed2" ] );
      console.log( run() );
      console.log( run() );
      console.log( run() );
      // Execute the test: End  --------
 
  })();
-
